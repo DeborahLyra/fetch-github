@@ -16,7 +16,15 @@ const screen = {
     this.userProfile.innerHTML = userInfo
 
     let reposItens = ''
-    user.repositories.forEach(repo => reposItens += `<li><a href="${repo.html_url}" target= "_blank">${repo.name}</a></li>`);
+
+    user.repositories.forEach(repo => reposItens += `<li><a href="${repo.html_url}" target= "_blank">${repo.name}</a> <br> 
+                                                        <div class="repos-itens">
+                                                            <span>🍴 ${repo.forks ?? '?'}</span>
+                                                            <span>⭐️ ${repo.stars ?? '?'}</span>
+                                                            <span>👀 ${repo.watchers ?? '?'}</span>
+                                                            <span>👨‍💻 ${repo.language ??'?'}</span>
+                                                        </div>
+                                                      </li>`);
 
     if (user.repositories.length > 0) {
 
@@ -26,6 +34,9 @@ const screen = {
                                    </div>
                                  `
     }
+
+
+
 
     let eventItens = '';
 

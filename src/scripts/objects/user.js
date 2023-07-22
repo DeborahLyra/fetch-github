@@ -8,6 +8,11 @@ const user = {
     repositories: [],
     repoName: '',
     events: [],
+    forks: '',
+    stars: '', 
+    watchers:'',
+    language:'',
+
     setInfo(gitHubUser) {
         this.avatarUrl = gitHubUser.avatar_url;
         this.name = gitHubUser.name;
@@ -20,6 +25,10 @@ const user = {
     setRepos(gitHubRepos) {
         this.repoName = gitHubRepos.full_name;
         this.repositories = gitHubRepos;
+        this.forks = gitHubRepos.forks_count;
+        this.stars = gitHubRepos.stargazers_count;
+        this.watchers = gitHubRepos.watchers_count;
+        this.language = gitHubRepos.language;
     },
 
      setEvents(gitEvents) {
