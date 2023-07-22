@@ -2,6 +2,7 @@ import { getUser } from "/src/scripts/services/user.js";
 import { getRepos } from "/src/scripts/services/repos.js";
 import { user } from "/src/scripts/objects/user.js";
 import { screen } from "./objects/screen.js";
+import { getEvents } from "./services/events.js";
 
 
 
@@ -32,15 +33,21 @@ async function getUserData(userName) {
 
     const userResponse = await getUser(userName)
   
-    if(userResponse.message === 'Not Found'){   //vê se o usuário existe
+    if(userResponse.message === 'Not Found'){   
         screen.rederNotFound()
         return
     }
 
     const reposResponse = await getRepos(userName)
 
+    const eventResponse = await getEvents(userName)
+
+    console.log(reposResponse)
+    
+
     user.setInfo(userResponse)
     user.setRepos(reposResponse)
+    user.setEvents(eventResponse)
 
     screen.renderUser(user)
 }
