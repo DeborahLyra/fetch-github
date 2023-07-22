@@ -43,6 +43,7 @@ async function getUserData(userName) {
     const eventResponse = await getEvents(userName)
 
     console.log(reposResponse)
+    console.log(userResponse)
     
 
     user.setInfo(userResponse)
