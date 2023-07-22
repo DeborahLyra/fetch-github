@@ -32,8 +32,8 @@ input.addEventListener('keyup', e => {
 async function getUserData(userName) {
 
     const userResponse = await getUser(userName)
-  
-    if(userResponse.message === 'Not Found'){   
+
+    if (userResponse.message === 'Not Found') {
         screen.rederNotFound()
         return
     }
@@ -44,7 +44,7 @@ async function getUserData(userName) {
 
     console.log(reposResponse)
     console.log(userResponse)
-    
+
 
     user.setInfo(userResponse)
     user.setRepos(reposResponse)

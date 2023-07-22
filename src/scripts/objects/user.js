@@ -23,9 +23,9 @@ const user = {
         this.repositories = gitHubRepos;
     },
 
-     setEvents(gitEvents) {
-         this.events = gitEvents;
-     }
+    setEvents(gitEvents) {
+        this.events = gitEvents;
+    }
 }
 
 export { user }
